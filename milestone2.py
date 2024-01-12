@@ -16,7 +16,7 @@ print(data)
 
 data['WaferDiameter']=int(data['WaferDiameter'])
 
-print(data)
+print('whole data', data)
 
 diameter=data['WaferDiameter']
 height, width = data['DieSize'].strip().split('x')
@@ -24,36 +24,60 @@ height, width = data['DieSize'].strip().split('x')
 height=int(height)
 width=int(width)
 
-print(height)
-print(width)
+print('height ', height)
+print('Width', width)
 
 dsv=ast.literal_eval(data['DieShiftVector'])
-print(dsv)
+print('die shift vector', dsv)
 dsv=list(dsv)
 
 rd=ast.literal_eval(data['ReferenceDie'])
-print(rd)
+print('reference die', rd)
 rd=list(rd)
 
-print(dsv)
-print(rd)
+print('die shift vector',dsv)
+print('reference die',rd)
 
 
+def is_point_inside_circle(x, y, diameter):
+
+    radius = diameter / 2
+    distance = math.sqrt(x**2 + y**2)
+
+    if (distance <= radius):
+         return True
+    else:
+         return False
+         
+=0,0
 def coord(diameter,height, width, dsv, rd):
     print(type(height))
     print(type(width))
     x=dsv[0]
     y=dsv[1]
-    print(x,y)
+    print('dsv points ', x,y)
     llcx=rd[0]
     print(type(llcx))
     llcy=rd[1]
-    print(llcx, llcy)
+    print('rd points : ', llcx, llcy)
     x_, y_=0,0
-    while(x_ < llcx and llcx > width):
-        x_=width
-        print('in loop' , x)
-
+    while(x_ < llcx and llcx < width):
+        x_=x_ + width
+        print('in loop' , x_)
+    while(y_ < llcy and llcy < height):
+        y_= y_ + height
+        print("in loop ", y_)
+    x_llcx=x_
+    y_llcx=y_
     
+    print(x_llcx)
+    print(y_llcx)
+    
+ 
+    return x_llcx
+
 res=[]
 res=coord(diameter,height, width, dsv, rd )
+print(res)
+
+partial=is_point_inside_circle()
