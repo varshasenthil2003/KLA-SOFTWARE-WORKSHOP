@@ -5,7 +5,7 @@ import math
 import numpy as np
 
 
-with open("C:/Users/91948/Desktop/Kla hackathon/Milestone1/Input/Testcase1.txt", "r") as file1:
+with open("C:/Users/91948/Desktop/Kla hackathon/Milestone1/Input/Testcase3.txt", "r") as file1:
         read_content = file1.readlines()
         print(read_content)
 data={}
@@ -84,5 +84,5 @@ print(answer)
 
 '''
 
-with open ('C:/Users/91948/Desktop/Kla hackathon/Milestone1/outputof1.txt', 'w') as file:  
+with open ('C:/Users/91948/Desktop/Kla hackathon/Milestone1/outputof3.txt', 'w') as file:  
     file.write(answer)  
