@@ -1,5 +1,4 @@
 import math
-import numpy as np
 import ast 
 
 with open("C:/Users/91948/Desktop/Kla hackathon/Milestone2/Input/Testcase1.txt", "r") as file1:
@@ -11,6 +10,7 @@ data={}
 for line in read_content:
         key, value = line.strip().split(':')
         data[key] = (value)
+
 
 print(data)
 
