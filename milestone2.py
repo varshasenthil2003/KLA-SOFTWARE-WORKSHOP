@@ -20,6 +20,10 @@ print(data)
 
 diameter=data['WaferDiameter']
 height, width = data['DieSize'].strip().split('x')
+
+height=int(height)
+width=int(width)
+
 print(height)
 print(width)
 
@@ -36,16 +40,20 @@ print(rd)
 
 
 def coord(diameter,height, width, dsv, rd):
+    print(type(height))
+    print(type(width))
     x=dsv[0]
     y=dsv[1]
     print(x,y)
     llcx=rd[0]
+    print(type(llcx))
     llcy=rd[1]
     print(llcx, llcy)
     x_, y_=0,0
-    
-    
+    while(x_ < llcx and llcx > width):
+        x_=width
+        print('in loop' , x)
 
     
-result=[]
+res=[]
 res=coord(diameter,height, width, dsv, rd )
